@@ -62,7 +62,7 @@ input {
 .task__input {
   width: 56%;
   display: inline-block;
-  flex-grow: 1
+  flex-grow: 1;
 }
 
 .task__input {
@@ -156,7 +156,7 @@ input {
 }
 
 .task .task__input {
-  width: 226px
+  width: 226px;
 }
 
 .task__delete--img {
@@ -177,12 +177,12 @@ input {
 
 /* Edit Task */
 .tasks__list .task__input {
-  display: none
+  display: none;
 }
 
 .task__edit-mode .task__input {
   display: inline-block;
-  width: 224px
+  width: 224px;
 }
 
 .task__edit-mode .task__name {
