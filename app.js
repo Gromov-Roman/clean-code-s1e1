@@ -1,7 +1,7 @@
-const newTaskInput = document.getElementById('new-task');
-const addButton = document.getElementById('new-item__add');
-const incompleteTasks = document.getElementById('uncompleted-tasks');
-const completedTasks = document.getElementById('completed-tasks');
+const newTaskInput = document.querySelector('.new-item__task__input');
+const addButton = document.querySelector('.new-item__task__add');
+const incompleteTasks = document.querySelector('.tasks__list_incomplete');
+const completedTasks = document.querySelector('.tasks__list_completed');
 
 const createNewTaskElement = function (taskName) {
     const listItem = document.createElement('li');
@@ -29,7 +29,7 @@ const createNewTaskElement = function (taskName) {
     deleteButton.className = 'task__delete';
     deleteButtonImg.src = './remove.svg';
     deleteButtonImg.alt = 'Remove Button';
-    deleteButtonImg.className = 'task__delete--img';
+    deleteButtonImg.className = 'task__delete__img';
     deleteButton.appendChild(deleteButtonImg);
 
     listItem.appendChild(checkBox);
@@ -60,7 +60,7 @@ const editTask = function () {
     const editInput = listItem.querySelector('input[type=text]');
     const label = listItem.querySelector('label');
     const editBtn = listItem.querySelector('.task__edit');
-    const containsClass = listItem.classList.contains('task__edit-mode');
+    const containsClass = listItem.classList.contains('task_edit-mode');
 
     if (containsClass) {
         label.innerText = editInput.value;
@@ -70,7 +70,7 @@ const editTask = function () {
         editBtn.innerText = 'Save';
     }
 
-    listItem.classList.toggle('task__edit-mode');
+    listItem.classList.toggle('task_edit-mode');
 };
 
 const deleteTask = function () {
