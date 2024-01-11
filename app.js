@@ -6,7 +6,7 @@ const completedTasks = document.querySelector('.tasks__list_completed');
 const createNewTaskElement = function (taskName) {
     const listItem = document.createElement('li');
     const checkBox = document.createElement('input');
-    const label = document.createElement('label');
+    const name = document.createElement('span');
     const editInput = document.createElement('input');
     const editButton = document.createElement('button');
     const deleteButton = document.createElement('button');
@@ -14,8 +14,8 @@ const createNewTaskElement = function (taskName) {
 
     listItem.className = 'task';
 
-    label.innerText = taskName;
-    label.className = 'task__name';
+    name.innerText = taskName;
+    name.className = 'task__name';
 
     checkBox.type = 'checkbox';
     checkBox.className = 'task__select';
@@ -33,7 +33,7 @@ const createNewTaskElement = function (taskName) {
     deleteButton.appendChild(deleteButtonImg);
 
     listItem.appendChild(checkBox);
-    listItem.appendChild(label);
+    listItem.appendChild(name);
     listItem.appendChild(editInput);
     listItem.appendChild(editButton);
     listItem.appendChild(deleteButton);
@@ -58,15 +58,15 @@ const editTask = function () {
     const listItem = this.parentNode;
 
     const editInput = listItem.querySelector('input[type=text]');
-    const label = listItem.querySelector('label');
+    const name = listItem.querySelector('.task__name');
     const editBtn = listItem.querySelector('.task__edit');
     const containsClass = listItem.classList.contains('task_edit-mode');
 
     if (containsClass) {
-        label.innerText = editInput.value;
+        name.innerText = editInput.value;
         editBtn.innerText = 'Edit';
     } else {
-        editInput.value = label.innerText;
+        editInput.value = name.innerText;
         editBtn.innerText = 'Save';
     }
 
